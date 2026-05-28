@@ -17,11 +17,20 @@ const users = [
 ];
 const userSlice = createSlice({
   name: "user",
-  initialState: { items: users },
+  initialState: { items: users,isLoggedIn:false },
   reducers: {
-    login: () => {},
+    login: (state, action) => {
+      const found =  state.items.find(
+        (element) =>
+          element.email === action.payload.email &&
+          element.password === action.payload.password,
+      );
+      if (found) {
+        state.isLoggedIn = true
+      }
+    },
     logout: () => {},
   },
 });
-export const {login,logout} = userSlice.actions
-export default userSlice.reducer
+export const { login, logout } = userSlice.actions;
+export default userSlice.reducer;
