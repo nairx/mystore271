@@ -22,6 +22,19 @@ export default function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "cart", element: <Cart />, errorElement: <ErrorPage /> },
+        { path: "order", element: <Order />, errorElement: <ErrorPage /> },
+        { path: "login", element: <Login />, errorElement: <ErrorPage /> },
+
+        {
+          path: "admin",
+          element: <AdminLayout />,
+          errorElement: <ErrorPage />,
+          children: [
+            { index: true, element: <Users /> },
+            { path: "products", element: <Products /> },
+             { path: "orders", element: <Orders /> },
+          ],
+        },
       ],
     },
   ]);
