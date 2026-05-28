@@ -32,8 +32,11 @@ const userSlice = createSlice({
     register: (state, action) => {
       state.items.push(action.payload);
     },
+    deleteUser: (state, action) => {
+      state.items = state.items.filter((element) => element.email !== action.payload);
+    },
     logout: () => {},
   },
 });
-export const { login, logout,register } = userSlice.actions;
+export const { login, logout, register,deleteUser } = userSlice.actions;
 export default userSlice.reducer;
