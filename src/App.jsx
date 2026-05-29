@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import ErrorPageGlobal from "./components/ErrorPageGlobal";
 import ErrorPage from "./components/ErrorPage";
+import ProductDetails from "./components/ProductDetails";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,7 @@ export default function App() {
         { path: "cart", element: <Cart />, errorElement: <ErrorPage /> },
         { path: "order", element: <Order />, errorElement: <ErrorPage /> },
         { path: "register", element: <Register />, errorElement: <ErrorPage /> },
+        {path:"productdetails/:id", element:<ProductDetails/>},
         { path: "login", element: <Login />, errorElement: <ErrorPage /> },
 
         {
